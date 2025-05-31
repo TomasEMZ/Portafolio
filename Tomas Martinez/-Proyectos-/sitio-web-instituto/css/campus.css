@@ -1,0 +1,221 @@
+/* Paleta azul elegante */
+:root {
+  --fondo: #f0f6ff;
+  --primario: #005f99;
+  --secundario: #89c2d9;
+  --texto: #1a1a1a;
+  --blanco: #ffffff;
+  --resalte: #0077cc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--resalte);
+  text-decoration: none;
+}
+
+/* Encabezado */
+.header-campus {
+  background-color: var(--primario);
+  color: var(--blanco);
+  text-align: center;
+  padding: 3rem 1rem;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 15px rgba(0, 95, 153, 0.3);
+  animation: fadeInDown 1s ease;
+}
+
+.header-campus h1 {
+  font-size: 3rem;
+}
+
+.header-campus .proximamente {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--secundario);
+  animation: pulse 2s infinite;
+}
+
+/* Contenido principal */
+.main-campus {
+  flex: 1;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.info-campus {
+  background-color: var(--blanco);
+  max-width: 700px;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 95, 153, 0.15);
+  animation: fadeInUp 1.2s ease;
+}
+
+.info-campus .icono {
+  font-size: 4rem;
+  color: var(--resalte);
+  margin-bottom: 1rem;
+}
+
+.info-campus h2 {
+  font-size: 1.8rem;
+  color: var(--primario);
+  margin-bottom: 1rem;
+}
+
+.info-campus p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.info-campus ul {
+  list-style: none;
+  text-align: left;
+  margin: 1rem auto;
+  padding: 0;
+  max-width: 500px;
+}
+
+.info-campus ul li {
+  margin: 0.7rem 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.info-campus ul i {
+  color: var(--resalte);
+  font-size: 1.3rem;
+}
+
+/* Formulario de suscripción */
+.form-suscripcion {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.form-suscripcion input {
+  padding: 0.7rem 1rem;
+  border: 2px solid var(--secundario);
+  border-radius: 6px;
+  font-size: 1rem;
+  flex: 1;
+  min-width: 240px;
+}
+
+.form-suscripcion button {
+  background-color: var(--resalte);
+  color: var(--blanco);
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-suscripcion button:hover {
+  background-color: var(--primario);
+}
+
+/* Mensaje secundario */
+.mensaje-secundario {
+  font-style: italic;
+  color: var(--secundario);
+  margin-top: 1rem;
+}
+
+/* Footer */
+.footer-campus {
+  background-color: var(--primario);
+  color: var(--blanco);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.7; }
+}
+
+/* Decoraciones flotantes */
+.decoraciones .burbuja {
+  position: absolute;
+  background-color: rgba(0, 119, 204, 0.1);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.decoraciones .burbuja:nth-child(1) {
+  width: 80px; height: 80px;
+  top: 20%; left: 10%;
+}
+
+.decoraciones .burbuja:nth-child(2) {
+  width: 100px; height: 100px;
+  top: 60%; left: 80%;
+}
+
+.decoraciones .burbuja:nth-child(3) {
+  width: 60px; height: 60px;
+  top: 75%; left: 30%;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .info-campus {
+    padding: 1.5rem;
+  }
+  .header-campus h1 {
+    font-size: 2rem;
+  }
+  .header-campus .proximamente {
+    font-size: 1.2rem;
+  }
+}
+
+

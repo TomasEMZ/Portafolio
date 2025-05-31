@@ -1,0 +1,177 @@
+/* psicopedagogia.css */
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.career-info {
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.career-info:hover {
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #005a87;
+}
+
+p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.career-details {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.detail-block {
+  flex: 1 1 45%;
+  background: white;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgb(0 0 0 / 0.12);
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: #007bb8;
+  margin-bottom: 0.6rem;
+}
+
+/* Plan de estudio */
+.study-plan {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  margin-top: 2.5rem;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.study-plan:hover {
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+}
+
+.study-plan h2 {
+  color: #005a87;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.study-plan-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  font-size: 1.1rem;
+  color: #333;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 2rem;
+}
+
+.study-plan-list li {
+  margin-bottom: 0.6rem;
+}
+
+/* Botón descarga */
+.button {
+  display: inline-block;
+  background-color: #007bb8;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #005a87;
+  cursor: pointer;
+}
+
+/* Animación fade-in */
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive: tablets y móviles */
+@media (max-width: 900px) {
+  main {
+    padding: 0 1rem;
+    margin: 1.5rem auto;
+  }
+
+  .career-details {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .detail-block {
+    flex: 1 1 100%;
+    padding: 1rem 1.2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  p, .study-plan-list li {
+    font-size: 1rem;
+  }
+
+  .button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  p, .study-plan-list li {
+    font-size: 0.95rem;
+  }
+
+  .button {
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+}

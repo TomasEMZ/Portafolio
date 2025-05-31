@@ -1,0 +1,177 @@
+/* Paleta azul elegante */
+:root {
+  --fondo: #f0f6ff;
+  --primario: #005f99;
+  --secundario: #89c2d9;
+  --texto: #1a1a1a;
+  --blanco: #ffffff;
+  --resalte: #0077cc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--resalte);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--primario);
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contenedor-contacto {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* SECCIÓN CONTACTO */
+.seccion-contacto h2 {
+  font-size: 2.2rem;
+  color: var(--primario);
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  font-weight: 700;
+}
+
+.seccion-contacto h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--resalte);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* TARJETAS DE CONTACTO */
+.tarjetas-contacto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 1.8rem;
+  margin-bottom: 3rem;
+}
+
+.tarjeta {
+  background: var(--blanco);
+  padding: 1.8rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(75, 63, 114, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.tarjeta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(130, 104, 195, 0.3);
+}
+
+/* ICONOS */
+.tarjeta i {
+  font-size: 3.2rem;
+  color: var(--resalte);
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.tarjeta:hover i {
+  color: var(--primario);
+}
+
+/* TITULOS DE TARJETAS */
+.tarjeta h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+  color: var(--primario);
+  font-weight: 700;
+}
+
+/* TEXTOS Y LINKS */
+.tarjeta p {
+  font-size: 1rem;
+  color: var(--texto);
+  word-wrap: break-word;
+}
+
+.tarjeta p a {
+  color: var(--resalte);
+  font-weight: 600;
+}
+
+.tarjeta p a:hover {
+  color: var(--primario);
+  text-decoration: underline;
+}
+
+/* MAPA */
+.mapa-contacto {
+  max-width: 100%;
+  margin-bottom: 3rem;
+}
+
+.mapa-contacto h2 {
+  color: var(--primario);
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.mapa-contacto iframe {
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(75, 63, 114, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.mapa-contacto iframe:hover {
+  box-shadow: 0 0 28px rgba(130, 104, 195, 0.3);
+}
+
+/* SECCIÓN DESARROLLADOR */
+.desarrollador {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--primario);
+  margin-bottom: 3rem;
+}
+
+.desarrollador a {
+  color: var(--resalte);
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.desarrollador a:hover {
+  color: var(--primario);
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .tarjetas-contacto {
+    grid-template-columns: 1fr;
+  }
+
+  .contenedor-contacto {
+    padding: 0 1rem;
+  }
+}
+

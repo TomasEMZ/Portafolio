@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Instituto Superior Depiero</title>
+  <link rel="stylesheet" href="../sitio-web-instituto/css/global.css">
+  <link rel="stylesheet" href="../sitio-web-instituto/css/inicio-pagina.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+<!-- Solución de problema - "queda abierto menu de carriera y no cierra" -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const submenus = document.querySelectorAll(".submenu");
+
+    submenus.forEach(function (submenu) {
+      const submenuLista = submenu.querySelector(".submenu-lista");
+
+      submenu.addEventListener("click", function (e) {
+        e.stopPropagation();
+
+        // Cierra todos los otros submenús abiertos
+        document.querySelectorAll(".submenu-lista.abierto").forEach(function (listaAbierta) {
+          if (listaAbierta !== submenuLista) {
+            listaAbierta.classList.remove("abierto");
+          }
+        });
+
+        // Toggle del actual
+        submenuLista.classList.toggle("abierto");
+      });
+    });
+
+    // Cierra todos si se hace clic fuera
+    document.addEventListener("click", function (e) {
+      document.querySelectorAll(".submenu-lista.abierto").forEach(function (listaAbierta) {
+        listaAbierta.classList.remove("abierto");
+      });
+    });
+  });
+</script>
+
+
+
+  <!-- Barra de contacto superior -->
+  <div class="barra-contacto">
+    <p>📞 (011) 1234-5678</p>
+    <p>✉️ contacto@institutoejemplo.edu.ar</p>
+    <p>💼 Trabajá con nosotros</p>
+  </div>
+
+  <!-- Encabezado principal -->
+  <header class="barra-superior">
+    <div class="contenedor-header">
+      <div class="logo">
+        <a href="pag.html">
+          <img src="Imagines/Logo.jpg" alt="Logo Instituto">
+        </a>
+      </div>
+      <nav class="menu-navegacion">
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li class="submenu">
+           <a href="#">Institucional</a>
+            <ul class="submenu-lista">
+            <li><a href="../sitio-web-instituto/Información institución/historia.html"><b>Historia</b></a></li>
+            <li><a href="../sitio-web-instituto/Información institución/antecedentesinst.html"><b>Antecedentes Institucionales</b></a></li>
+          </ul>
+          </li>
+
+          <li class="submenu">
+            <a href="#">Carreras</a>
+            <ul class="submenu-lista">
+              <li> <a href="Carreras/Fonoaudiología.html"><b>Fonoaudiología</b></a> </li> 
+              <li> <a href="Carreras/psicopedagogia.html"><b>Psicopedagogía</b></a> </li>
+              <li> <a href="Carreras/enfermeria.html"><b>Bibliotecología</b></a> </li>
+            </ul>
+          </li>
+          <li><a href="../sitio-web-instituto/Información institución/cursos.html"><b>Cursos</b></a></li>
+          <li class="submenu">
+            <a href="#">Alumnos</a>
+            <ul class="submenu-lista">
+            <li><a href="../sitio-web-instituto/Información institución/inscripcion.html"><b>Información Inscripción</b></a></li>
+          <li><a href="../sitio-web-instituto/Información institución/reglamento.html"><b>Reglamento Institucional</b></a></li>
+            </ul>
+          </li>
+
+          <li><a href="../sitio-web-instituto/Información institución/campus.html"><b>Campus</b></a></li>
+          <li><a href="../sitio-web-instituto/Información institución/contacto.html"><b>Contacto</b></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Secciones principales -->
+  <section id="inicio">
+    <!-- Colocá las imágenes en la carpeta Imagines/ como:
+
+            inscripciones.jpg
+
+            nueva-carrera.jpg
+
+            charla.jpg
+
+            becas.jpg                                          -->
+    <section id="novedades">
+  <h2 class="titulo-novedades">Novedades Institucionales</h2>
+  <div class="contenedor-novedades">
+    
+    <div class="tarjeta-novedad" style="background-image: url('../sitio-web-instituto/Imagines/institutofrente.jpg');">
+      <div class="contenido-novedad">
+        <h3>Inscripciones Agosto</h3>
+        <p>¡Cupos disponibles! Anotate ahora.</p>
+        <a href="../sitio-web-instituto/Información institución/alumnos.html" class="boton-novedad">Hacé clic acá</a>
+      </div>
+    </div>
+
+    <div class="tarjeta-novedad" style="background-image: url('../sitio-web-instituto/Imagines/inscripciones.jpg');">
+      <div class="contenido-novedad">
+        <h3>Nueva Carrera 2025</h3>
+        <p>¡Lanzamos Psicología a partir de marzo!</p>
+        <a href="#" class="boton-novedad">Más info</a>
+      </div>
+    </div>
+
+    <div class="tarjeta-novedad" style="background-image: url('../sitio-web-instituto/Imagines/mary.jpg');">
+      <div class="contenido-novedad">
+        <h3>Charla Abierta</h3>
+        <p>Con profesionales de la salud. Entrada libre.</p>
+        <a href="#" class="boton-novedad">Ver evento</a>
+      </div>
+    </div>
+
+    <div class="tarjeta-novedad" style="background-image: url('../sitio-web-instituto/Imagines/instituto.jpg');">
+      <div class="contenido-novedad">
+        <h3>Becas 2025</h3>
+        <p>Postulate hasta el 30 de junio.</p>
+        <a href="#" class="boton-novedad">Inscribirme</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!--Slider videos-->
+
+<section class="hero-slider">
+  <!-- Slide 1 -->
+  <div class="hero-slide active">
+    <video autoplay muted loop playsinline class="background-media">
+      <source src="../sitio-web-instituto/Videos/prueba12.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-content">
+      <h1>Bienvenidos al Instituto Superior De Piero</h1>
+      <p>Donde la educación se transforma en oportunidad y crecimiento. Desde 1996 en Quilmes, somos más que una institución: somos un espacio innovador que potencia a directivos, docentes y estudiantes con formación de excelencia y vínculo cercano e humano.
+Impulsamos la actualización constante, el desarrollo profesional y la gestión educativa eficiente, conectando con universidades reconocidas y generando un ambiente de aprendizaje dinámico a través de jornadas y practicas profesionales muy enriquecedoras. Aquí, tu futuro se construye con conocimiento, compromiso y una mirada integral que acompaña el presente y abre las puertas a nuevas posibilidades. ¡Sumate a nuestra comunidad y crecé con nosotros!</p>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="hero-slide">
+    <img src="../sitio-web-instituto/Imagines/alumnosfono.jpg" class="background-media" />
+    <div class="hero-content">
+      <h1>Tecnicatura Superior en Fonoaudiología</h1>
+      <p>Formamos profesionales de la salud especializados en el lenguaje y la comunicación, con una sólida base científica y un compromiso social. Durante cuatro años, los estudiantes adquieren conocimientos técnicos y prácticos para comprender y potenciar las habilidades comunicativas humanas.
+
+El programa prepara a los futuros fonoaudiólogos para analizar el lenguaje desde sus diferentes componentes, facilitar procesos de alfabetización y abordar situaciones comunicativas diversas, desarrollando competencias esenciales para su rol profesional.
+
+Al finalizar, los graduados obtienen el título de Fonoaudiólogo, listos para contribuir a mejorar la calidad de vida a través del cuidado y la promoción de la comunicación.</p>
+    </div>
+  </div>
+  
+  <!-- Slide 3 -->
+  <div class="hero-slide">
+    <img src="../sitio-web-instituto/Imagines/practicasfono.jpg" class="background-media" />
+    <div class="hero-content">
+      <h1>Prácticas Profesionalizantes</h1>
+      <p>Las prácticas profesionalizantes son el puente entre la teoría y el mundo real. En el Instituto Superior De Piero, brindamos espacios concretos donde los estudiantes pueden aplicar sus conocimientos en contextos reales de trabajo, fortaleciendo sus habilidades y construyendo experiencia profesional desde el trayecto formativo.
+
+Acompañados por docentes y tutores, los alumnos participan en instituciones, centros de salud y otros entornos afines a su carrera, desarrollando compromiso, responsabilidad y una mirada integral de su futura profesión.
+
+Porque creemos en el aprendizaje vivencial, las prácticas no son un requisito más: son una oportunidad para crecer, vincularse con el entorno laboral y reafirmar la vocación.
+      </p>
+    </div>
+  </div> <!-- Aquí cerré el div del slide 3 -->
+
+  <!-- Slide 4 -->
+  <div class="hero-slide">
+    <img src="../sitio-web-instituto/Imagines/biblio.jpg" class="background-media" />
+    <div class="hero-content">
+      <h1>Tecnicatura Superior en Bibliotecología de Instituciones Educativas</h1>
+      <p>Formate como un profesional esencial en el corazón del conocimiento escolar.
+
+Esta carrera te prepara para organizar, gestionar y dinamizar bibliotecas en contextos educativos, promoviendo el acceso a la información y el amor por la lectura. Como bibliotecario/a, serás el puente entre la comunidad educativa, la tecnología y el conocimiento, con una mirada crítica, pedagógica y transformadora.
+      </p>
+    </div>
+  </div>
+
+  <!-- Slide 5 -->
+  <div class="hero-slide">
+    <img src="../sitio-web-instituto/Imagines/25demayoo.jpg" class="background-media" />
+    <div class="hero-content">
+      <h1> 25 de Mayo</h1>
+      <p>Celebramos el nacimiento del primer gobierno patrio.
+
+El 25 de mayo de 1810 marcó un antes y un después en la historia argentina. Ese día, en Buenos Aires, se conformó la Primera Junta de Gobierno, dando inicio al proceso de independencia y dejando atrás siglos de dominio colonial.
+
+Hoy, recordamos con orgullo a aquellos hombres y mujeres que soñaron con una nación libre y soberana. Desde nuestras aulas y espacios educativos, renovamos el compromiso con los valores de la libertad, la participación y la construcción colectiva.
+
+¡Viva la Patria!</p>
+    </div>
+  </div>
+
+  <!-- Slide 6 -->
+  <div class="hero-slide">
+    <video autoplay muted loop playsinline class="background-media">
+      <source src="../sitio-web-instituto/Videos/mayo25.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-content">
+      <h1>Compartimos el 25 de mayo</h1>
+      <p></p>
+    </div>
+  </div>
+
+  <!-- Botones -->
+  <div class="hero-nav">
+    <div class="hero-arrows">
+      <div class="hero-arrow left" onclick="prevSlide()">&#9664;</div>
+      <div class="hero-arrow right" onclick="nextSlide()">&#9654;</div>
+    </div>
+
+    <span class="nav-btn active" onclick="showSlide(0)"></span>
+    <span class="nav-btn" onclick="showSlide(1)"></span>
+    <span class="nav-btn" onclick="showSlide(2)"></span>
+    <span class="nav-btn" onclick="showSlide(3)"></span>
+    <span class="nav-btn" onclick="showSlide(4)"></span>
+    <span class="nav-btn" onclick="showSlide(5)"></span>
+  </div>
+</section>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.hero-slide');
+  const navButtons = document.querySelectorAll('.nav-btn');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+
+    navButtons.forEach((btn, i) => {
+      btn.classList.toggle('active', i === index);
+    });
+
+    currentSlide = index;
+  }
+
+  function nextSlide() {
+    const next = (currentSlide + 1) % slides.length;
+    showSlide(next);
+  }
+
+  function prevSlide() {
+    const prev = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(prev);
+  }
+</script>
+
+  <!-- Cambio automático opcional de tiempo de cambio de videos 
+  //setInterval(() => {
+  // const nextSlide = (currentSlide + 1) % slides.length;
+  // showSlide(nextSlide);
+  // }, 40000);
+  //  -->
+
+
+<!-- Ubicación y contacto -->
+  <section id="contacto">
+    <h2>Donde nos encontramos</h2>
+    <p>📍 Dirección: Av. Gral. Lamadrid 1186, Quilmes, Provincia de Buenos Aires</p>
+    <div class="mapa">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d26231.53220391676!2d-58.2851704263416!3d-34.73186828651745!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a32e0826577473%3A0x893dc38d85434137!2sInstituto%20Superior%20De%20Piero!5e0!3m2!1ses!2sus!4v1744217689968!5m2!1ses!2sus        " 
+        width="100%" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+  
+  <!-- Pie de página -->
+  <footer class="footer-info">
+    <div class="footer-contenedor">
+      <div class="footer-logo">
+        <img src="Imagines/Logo.jpg" alt="Logo Instituto">
+      </div>
+      
+      <div class="footer-datos">
+        <p><strong>Dirección:</strong> Av. Lamadrid 1186, Quilmes</p>
+        <p><strong>Tel:</strong> (011) 4252-4110</p>
+        <p><strong>Email:</strong> depieroinforma@gmail.com</p>
+      </div>
+      <div class="footer-redes">
+        <p><strong>SEGUINOS EN REDES</strong></p>
+        <a href="https://www.facebook.com/fbisdp" target="_blank">
+          <i class="fab fa-facebook-f"></i> Facebook
+        </a>
+        <br>
+        <a href="https://www.instagram.com/tu_instagram" target="_blank">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <br>
+        <a href="https://wa.me/541142524110" target="_blank">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+      <div class="footer-logo">
+        <img src="Imagines/Logo.jpg" alt="Logo Instituto">
+        <p>© 2025 Instituto Superior Depiero 
+        <br> 
+        <b> - Se reservan los derechos - </b> </p>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>
+
